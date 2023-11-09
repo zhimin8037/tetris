@@ -1,0 +1,14 @@
+body {
+    color: rgb(122, 156, 89);
+    background-color: rgb(53, 83, 105);
+    font-size: 20px;
+}
+
+button {
+    padding: 1px 10px ;
+    color: rgb(3, 9, 7);
+    background-color: rgb(173, 173, 203);
+    position: relative;
+    top: 25px;
+    right: 125px;
+}
