@@ -4,4 +4,5 @@ var ctx = canvas.getConrext('2d');
 canvas.width = window.innerWidth - 100;
 canvas.height = window.innerHeight - 100;
 
-ctx.fillstyle = 'green'
+ctx.fillstyle = 'green';
+ctx.fillrect(10,10, 100,100);
