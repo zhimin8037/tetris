@@ -9,6 +9,16 @@ button {
     color: rgb(3, 9, 7);
     background-color: rgb(173, 173, 203);
     position: relative;
-    top: 25px;
-    right: 125px;
-}
+    top: -15px;
+    right: 11px;
+} 
+.box {
+    position: relative;
+    color: white;
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    margin: 150px;
+
+  }
