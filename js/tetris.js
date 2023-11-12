@@ -2,6 +2,9 @@ import BLOCKS from "./blocks.js";//이상없음
 
 // DOM 이상없음
 const playground = document.querySelector(".playground > ul");
+const gametext = document.querySelector(".game-text")
+const scoreDisplay = document.querySelector(".score")
+const restartButton = document.querySelector(".game-text > button");
 
 // setting 이상없음
 const GAME_ROWS = 20;
@@ -58,8 +61,12 @@ function renderBlocks(movetype = "") {
             target.classList.add(type, "moving")
         } else {
             tempMovingItam = { ...movingItem }
+            if(movetype ==='retry') {
+                clearInterval(downInterval)
+                showGmaeoverText()
+            }
             setTimeout(() => {
-                renderBlocks()
+                renderBlocks('retry')
                 if (movetype === "top") {
                     seizeBlock();
                 }
@@ -77,6 +84,27 @@ function seizeBlock(){    //이상없음
         moving.classList.remove("moving");
         moving.classList.add("seized");
     })
+    checkMatch()
+}
+function checkMatch() {
+
+    const childNodes = playground.childNodes;
+    childNodes.forEach(child =>{
+        let matched = true;
+        child.children[0].childNodes.forEach(li =>{
+            if(!li.classList.contains("seized")) {
+                matched = false;
+            }
+        })
+        if(matched){
+            child.remove();
+            prependNewLine()
+            score++;
+            scoreDisplay.innerText = score;
+        }
+    
+    })
+
     generateNewBlock()
 }
 
@@ -119,6 +147,9 @@ function dropBlock() {
         moveBlock("top", 1)
     }, 10)
 }
+function showGmaeoverText() {
+    gametext.style.display = "flex"
+}
 
 document,addEventListener("keydown", e => {
     switch(e.keyCode) {
@@ -142,3 +173,9 @@ document,addEventListener("keydown", e => {
     }
     console.log(e)
 })
+
+restartButton.addEventListener("click", () => {
+    playground.innerHTML = "";
+    gametext.style.display = "none"
+    init()
+} )
