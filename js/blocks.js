@@ -104,7 +104,7 @@ const BLOCKS = {
             [1,2],
         ],
     ],
-    eileft: [
+    elleft: [
         [
             [0,0],
             [0,1],
@@ -114,7 +114,7 @@ const BLOCKS = {
         [
             [1,0],
             [1,1],
-            [1,1],
+            [1,2],
             [0,2],
         ],
         [
@@ -156,6 +156,6 @@ const BLOCKS = {
             [2,2],
         ],
     ],
-}
+};
 
 export default BLOCKS;

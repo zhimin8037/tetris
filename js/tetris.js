@@ -1,40 +1,41 @@
-import BLOCKS from "./blocks.js";
+import BLOCKS from "./blocks.js";//이상없음
 
+// DOM 이상없음
 const playground = document.querySelector(".playground > ul");
 
-
+// setting 이상없음
 const GAME_ROWS = 20;
-const GAME_CLOS = 10;
+const GAME_COLS = 10;
 
+// variables 이상없음
 let score =0;
 let duration = 500;
 let downInterval;
 let tempMovingItam;
 
-
-
-
+//이상없음
 const movingItem = {
     type: "",
     direction: 3,
     top: 0,
     left: 0,
 };
-
+//이상없음
 init()
 
+//이상없음
 function init() {
     tempMovingItam = { ...movingItem };
     for (let i = 0; i < GAME_ROWS; i++) {
         prependNewLine()
     }
-    renderBlocks()    
+    generateNewBlock()    
 }
-
-function prependNewLine(){
+//이상없음
+function prependNewLine() {
     const li = document.createElement("li");
     const ul = document.createElement("ul");
-    for(let j = 0; j < GAME_CLOS; j++) {
+    for (let j = 0; j < GAME_COLS; j++) {
         const matrix = document.createElement("li");
         ul.prepend(matrix);
     }
@@ -50,15 +51,15 @@ function renderBlocks(movetype = "") {
     BLOCKS[type][direction].some(block => {
         const x = block[0] + left;
         const y = block[1] + top;
-        console.log("playground.childNodes[y]")
+        console.log(playground.childNodes[y])
         const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
         const isAvailable = checkEmpty(target);
-        if(isAvailable) {
+        if (isAvailable) {
             target.classList.add(type, "moving")
         } else {
             tempMovingItam = { ...movingItem }
             setTimeout(() => {
-                renderBlocks();
+                renderBlocks()
                 if (movetype === "top") {
                     seizeBlock();
                 }
@@ -70,8 +71,7 @@ function renderBlocks(movetype = "") {
     movingItem.top = top;
     movingItem.direction = direction;
 }
-
-function seizeBlock(){
+function seizeBlock(){    //이상없음
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach(moving => {
         moving.classList.remove("moving");
@@ -79,6 +79,7 @@ function seizeBlock(){
     })
     generateNewBlock()
 }
+
 function generateNewBlock() {
 
     clearInterval(downInterval);
@@ -88,7 +89,7 @@ function generateNewBlock() {
 
     const blockArray = Object.entries(BLOCKS);
     const randomIndex = Math.floor(Math.random() * blockArray.length)
-    console.log(blockArray[randomIndex][0])
+    // console.log(blockArray[randomIndex][0])
     movingItem.type = blockArray[randomIndex][0]
     movingItem.top = 0;
     movingItem.left = 3;
@@ -96,9 +97,9 @@ function generateNewBlock() {
     tempMovingItam = {...movingItem};
     renderBlocks()
 }
-
+//이상없음
 function checkEmpty(target){
-    if(!target || target.classList.contains("seized")){
+    if(!target || target.classList.contains("seized")) {
         return false;
     }
     return true;
@@ -111,6 +112,12 @@ function chageDirection(){
     const direction = tempMovingItam.direction;
     direction === 3 ? tempMovingItam.direction = 0 : tempMovingItam.direction += 1;
     renderBlocks()
+}
+function dropBlock() {
+    clearInterval(downInterval);
+    downInterval = setInterval(() =>{
+        moveBlock("top", 1)
+    }, 10)
 }
 
 document,addEventListener("keydown", e => {
@@ -126,6 +133,9 @@ document,addEventListener("keydown", e => {
             break;
         case 38:
             chageDirection();
+            break;
+        case 32:
+            dropBlock();
             break;
         default:
             break;
