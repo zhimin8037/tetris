@@ -34,3 +34,21 @@ body {
     height: 25px;
     outline: 1px solid #ccc;
 }
+.square {
+    background: rgb(0, 145, 255);
+}
+.bar {
+    background: salmon;
+}
+.tree {
+    background: #67c23a;
+}
+.zee {
+    background: #e6a23c;
+}
+.elLeft {
+    background: #8e44ad;
+}
+.elRight- {
+    background: #16a085;
+}
