@@ -5,12 +5,17 @@
 
 ul {
     list-style: none;
+    background-color: #2e2e2e
 }
 
 body {
     height: 100%;
     overflow: hidden;
+    background-color: rgb(32, 32, 32);
 }
+img {
+    width: 200px;
+  }
 .game-text {
     display: none;
     justify-content: center;
@@ -34,8 +39,25 @@ body {
 }
 .score {
     text-align: center;
-    font-size: 36px;
+    font-size: 20px;
     margin-bottom: 2rem;
+    color: #fff;
+}
+.box {
+    background: rgb(43, 43, 43);  
+    color: white; 
+    text-align: center; 
+    width: 120px; 
+    padding: 10px;
+    font-size: 26px;
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: column;
+}
+.ground {
+    border: 5mm ridge rgba(107, 107, 106, 0.6);
+    width: 250px;
+    margin: 0 auto;
 }
 .playground > ul {
     border: 1px solid #333;
@@ -52,23 +74,24 @@ body {
 .playground > ul > li > ul > li {
     width: 25px;
     height: 25px;
-    outline: 1px solid #ccc;
+    outline: 1px solid #000000;
+    
 }
 .square {
-    background: #2c82c9;
+    background: #004177;
 }
 .bar {
-    background: salmon;
+    background: rgb(254, 28, 3);
 }
-    .tree {
-        background: #67c23a;
-    }
-    .zee {
-        background: #e6a23c;
-    }
-    .elleft {
-        background: #8e44ad;
-    }
-    .elRight {
-        background: #2feec8;
-    }
+.tree {
+    background: #2b8000;
+}
+.zee {
+background: #f89603;
+}
+.elleft {
+     background: #5e0386;
+}
+  .elRight {
+background: #01a382;
+}
