@@ -174,8 +174,15 @@ document,addEventListener("keydown", e => {
     console.log(e)
 })
 
+// restartButton.addEventListener("click", () => {
+//     playground.innerHTML = "";
+//     gametext.style.display = "none"
+//     init()
+// } )
 restartButton.addEventListener("click", () => {
     playground.innerHTML = "";
-    gametext.style.display = "none"
-    init()
-} )
+    gametext.style.display = "none";
+    score = 0; // 스코어 초기화
+    scoreDisplay.innerText = score; // 스코어 표시 업데이트
+    init();
+});
