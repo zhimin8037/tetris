@@ -49,7 +49,7 @@ body {
     margin: 0 auto;
     width: 237px;   
 }
-img {
+.logoimg > img {
     margin: auto;
     display: block;
     width: 200px;
@@ -65,6 +65,7 @@ img {
     margin-left: 30px; /* 왼쪽 여백 조정 */
     margin-right: 30px; /* 오른쪽 여백 조정 */
   }
+
 .downbutton-container {
     display: flex;
     justify-content: center;
@@ -77,8 +78,8 @@ img {
 .button {
     width: 40px;
     height: 40px;
-    background-color: #0080FF;
-    border: 5px solid #0040FF;
+    background-color: #0080ff00;
+    border: 0px solid #0040ff00;
     border-radius: 5px;
     font-size: 10px;
     color: #333;
