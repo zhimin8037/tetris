@@ -13,27 +13,6 @@ body {
     overflow: hidden;
     background-color: rgb(32, 32, 32);
 }
-/* #game-container {
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-    position: relative;
-}
-
-#block {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#controls {
-    margin-top: 20px;
-} */
-
-
 .game-text {
     display: none;
     justify-content: center;
@@ -78,20 +57,23 @@ img {
 }
 .sidebutton-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 0px;
-    /* align-items: center; */
-    /* position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 20px; */
-}
+  }
+  
+  .sidebutton-container button {
+    margin-left: 20px; /* 왼쪽 여백 조정 */
+    margin-right: 20px; /* 오른쪽 여백 조정 */
+  }
 .downbutton-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
+.downbutton-container button {
+    margin-left: 50px; /* 왼쪽 여백 조정 */
+    margin-right: 50px; /* 오른쪽 여백 조정 */
+  }
 .button {
     width: 50px;
     height: 40px;
