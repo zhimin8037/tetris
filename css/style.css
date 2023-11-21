@@ -62,8 +62,8 @@ img {
   }
   
   .sidebutton-container button {
-    margin-left: 20px; /* 왼쪽 여백 조정 */
-    margin-right: 20px; /* 오른쪽 여백 조정 */
+    margin-left: 30px; /* 왼쪽 여백 조정 */
+    margin-right: 30px; /* 오른쪽 여백 조정 */
   }
 .downbutton-container {
     display: flex;
@@ -71,16 +71,16 @@ img {
     margin-top: 20px;
 }
 .downbutton-container button {
-    margin-left: 50px; /* 왼쪽 여백 조정 */
-    margin-right: 50px; /* 오른쪽 여백 조정 */
+    margin-left: 80px; /* 왼쪽 여백 조정 */
+    margin-right: 30px; /* 오른쪽 여백 조정 */
   }
 .button {
-    width: 50px;
+    width: 40px;
     height: 40px;
     background-color: #0080FF;
     border: 5px solid #0040FF;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 10px;
     color: #333;
     cursor: pointer;
     margin: 0 55px; /* 버튼 사이에 여백을 추가합니다 */
