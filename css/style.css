@@ -73,8 +73,8 @@ body {
 img {
     margin: auto;
     display: block;
-    width: 210px;
-    height: 80px;
+    width: 200px;
+    height: 70px;
 }
 .sidebutton-container {
     display: flex;
